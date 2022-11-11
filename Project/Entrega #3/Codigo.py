@@ -151,17 +151,10 @@ class main:
 
     graph.dijkstra("(-75.5778046, 6.2029412)" )
     coordinates = graph.route("(-75.5778046, 6.2029412)" ,  "(-75.5762232, 6.266327)")
-    distancia = 0
-    riesgo = 0
-    contador = 0
-    for i in range(len(coordinates)-1):
-        distancia = distancia + datos.loc[(coordinates)]
     graph2.dijkstra("(-75.5778046, 6.2029412)" )
     coordinates2 = graph2.route("(-75.5778046, 6.2029412)" ,  "(-75.5762232, 6.266327)")
     graph3.dijkstra("(-75.5778046, 6.2029412)" )
     coordinates3 = graph3.route("(-75.5778046, 6.2029412)" ,  "(-75.5762232, 6.266327)")
-
-
 
     cont=0
     for i in coordinates:
@@ -193,9 +186,9 @@ class main:
     gMapOne=gmplot.GoogleMapPlotter(6.2029412, -75.5778046, 15)
     gMapOne.scatter(lons,lats,'#ff0000',size = 0, marker = False )
     gMapOne.plot(lons, lats, 'blue', edge_width = 9.0)
-    #gMapOne.plot(lons2, lats2, 'green', edge_width = 6.0)
-    #gMapOne.plot(lons3, lats3, 'red', edge_width = 3.0)
-    gMapOne.draw("map.html")  
+    gMapOne.plot(lons2, lats2, 'green', edge_width = 6.0)
+    gMapOne.plot(lons3, lats3, 'red', edge_width = 3.0)
+    gMapOne.draw("map.html")
 
     end = time.time()
    
